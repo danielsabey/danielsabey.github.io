@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <title>Your Name - Personal Website</title>
+    
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .wrapper {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            width: 270px;
+            padding: 20px;
+            position: fixed;
+            background: #f8f8f8;
+            height: 100vh;
+            overflow-y: auto;
+        }
+        
+        section {
+            margin-left: 310px;
+            padding: 20px;
+            max-width: 800px;
+        }
+        
+        h1 {
+            margin-bottom: 10px;
+            color: #222;
+        }
+        
+        .social-row {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .social-row a {
+            text-decoration: none;
+            color: #267CB9;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .social-row a:hover {
+            text-decoration: underline;
+        }
+        
+        nav a {
+            display: block;
+            color: #267CB9;
+            text-decoration: none;
+            padding: 5px 0;
+            font-size: 1.1em;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+        
+        img.profile {
+            max-width: 250px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        @media screen and (max-width: 800px) {
+            .wrapper {
+                flex-direction: column;
+            }
+            
+            header {
+                position: relative;
+                width: auto;
+                height: auto;
+            }
+            
+            section {
+                margin-left: 0;
+            }
+        }
+    </style>
+    
+    <!-- Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Your Name</h1>
+            <p>Your Title<br>Your Organization</p>
+            
+            <nav>
+                <h3><a href="index.html">Home</a></h3>
+                <h3><a href="research.html">Research</a></h3>
+                <h3><a href="cv.pdf">CV</a></h3>
+                <h3><a href="projects.html">Projects</a></h3>
+                <h3><a href="personal.html">Personal</a></h3>
+            </nav>
+
+            <div class="social-row">
+                <a href="mailto:your.email@example.com">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="https://github.com/yourusername">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://linkedin.com/in/yourusername">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://twitter.com/yourusername">
+                    <i class="fab fa-twitter"></i> Twitter
+                </a>
+            </div>
+
+            <p><b>Contact:</b><br>
+            Your Department<br>
+            Your University<br>
+            Your Address<br>
+            City, State ZIP</p>
+        </header>
+
+        <section>
+            <img src="your-photo.jpg" alt="Your Name" class="profile">
+            
+            <p>Welcome to my website! I am [Your Title] at [Your Organization]. Brief introduction about yourself and your work goes here.</p>
+            
+            <p>My research/professional interests include:</p>
+            <ul>
+                <li>Interest Area 1</li>
+                <li>Interest Area 2</li>
+                <li>Interest Area 3</li>
+            </ul>
+            
+            <p>Add more content about your work, achievements, or any other relevant information.</p>
+        </section>
+    </div>
+</body>
+</html>
