@@ -1,205 +1,161 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Research | Daniel Sabey</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <style>
-        /* Basic reset and body styles */
         body {
-          padding: 50px;
-          font: 14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-          color: #333;
-          font-weight: 400;
           margin: 0;
+          padding: 0;
+          background-color: #ffffff;
+          color: #1a1a1a;
+          font-family: system-ui, -apple-system, sans-serif;
         }
 
-        /* Wrapper for the entire content */
         .wrapper {
-          width: 960px;
-          margin: 0 auto;
-          position: relative;
+          display: grid;
+          grid-template-columns: 300px 1fr;
+          min-height: 100vh;
         }
 
-        /* Header/sidebar styles */
-        header {
-          width: 270px;
-          position: fixed;
-          left: 50%;
-          margin-left: -480px;
+        .wrapper > div:first-child {
+          background-color: #e6f3ff;
+          color: #1a1a1a;
+          padding: 2rem;
         }
 
-        /* Main content section */
-        section {
-          width: 600px;
-          float: right;
-          padding-bottom: 50px;
-        }
-
-        /* Accordion styles */
-        button.accordion {
-          font: 14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-          cursor: pointer;
-          padding: 0px;
-          border: none;
-          text-align: left;
-          outline: none;
-          font-size: 100%;
-          transition: 0.3s;
-          background-color: #f8f8f8;
-        }
-
-        button.accordion.active, button.accordion:hover {
-          background-color: #f8f8f8;
-        }
-
-        button.accordion:after {
-          content: " [+] ";
-          font-size: 90%;
-          color: #777;
-          float: left;
-          margin-left: 1px;
-        }
-
-        button.accordion.active:after {
-          content: " [\2212] ";
-        }
-
-        div.panel {
-          padding: 0 20px;
-          margin-top: 5px;
-          display: none;
-          background-color: white;
-          font-size: 100%;
-        }
-
-        div.panel.show {
-          display: block !important;
-        }
-
-        /* Social row styles */
-        .social-row {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          margin: 20px 0;
-        }
-
-        /* Link styles */
-        a {
-          color: #267CB9;
+        .wrapper > div:first-child a {
+          color: #2c5282;
           text-decoration: none;
         }
 
-        a:hover {
-          text-decoration: underline;
+        .wrapper a {
+          color: #2c5282;
         }
 
-        /* Header image */
+        .section {
+          padding: 2rem;
+          max-width: 800px;
+          line-height: 1.6;
+          background-color: #ffffff;
+        }
+
         .profile {
           width: 200px;
-          margin-bottom: 20px;
+          height: 200px;
+          border-radius: 50%;
+          margin: 1rem 0;
         }
 
-        /* Responsive design */
-        @media print, screen and (max-width: 960px) {
-          div.wrapper {
-            width: auto;
-            margin: 0;
-          }
+        .social-row {
+          display: flex;
+          gap: 1rem;
+          margin: 1rem 0;
+        }
 
-          header, section {
-            float: none;
-            position: static;
-            width: auto;
-          }
+        .panel {
+          background-color: #f8f8f8 !important;
+          border-radius: 4px;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+          margin: 1rem 0;
+          color: #1a1a1a;
+          padding: 1.5rem;
+        }
 
-          header {
-            padding-right: 320px;
-          }
+        h1, h2, h3 {
+          color: #1a1a1a;
+          margin-top: 2rem;
+        }
 
-          section {
-            border: 1px solid #e5e5e5;
-            border-width: 1px 0;
-            padding: 20px 0;
-            margin: 0 0 20px;
-          }
+        /* Add horizontal line styling */
+        hr {
+          border: none;
+          border-top: 1px solid #e5e5e5;
+          margin: 2rem 0;
+        }
+
+        .wrapper > div:first-child a:hover {
+          color: #1a1a1a;
+          transition: color 0.2s ease;
+        }
+
+        .social-row a:hover {
+          opacity: 0.8;
+          transition: opacity 0.2s ease;
+        }
+
+        /* Style for paper title */
+        .paper-title {
+          font-weight: bold;
+          margin: 0;
+          font-size: 1.1rem;
+        }
+
+        /* Style for paper authors */
+        .paper-authors {
+          margin: 0.5rem 0;
+          color: #4a5568;
+        }
+
+        /* Style for citation panel */
+        .citation-panel {
+          font-family: monospace;
+          white-space: pre-wrap;
+          font-size: 0.9rem;
+          background-color: #f8f8f8;
+          padding: 1rem;
+          border-radius: 4px;
         }
     </style>
 </head>
 <body>
 <div class="wrapper">
-    <header>
+    <div>
         <h1>Daniel Sabey</h1>
-
-        <img src="my-photo.jpg" class="profile">
-
-        <p>PhD Student<br>
-            Cornell University</p>
-
+        <img src="my-photo.jpg" class="profile" alt="Daniel Sabey">
+        <p>PhD Student<br>Cornell University</p>
         <h3><a href="index.html">Home</a></h3>
         <h3><a href="research.html">Research</a></h3>
-        <h3><a href="cv.pdf">CV</a></h3>
-
+        <h3><a href="CV.pdf">CV</a></h3>
         <div class="social-row">
             <a href="mailto:danielsabey@gmail.com">Email</a>
             <a href="https://linkedin.com/in/daniel-sabey">LinkedIn</a>
             <a href="https://x.com/SabeyDaniel">Twitter</a>
         </div>
-
-        <p><b>Contact:</b><br>
+        <p><strong>Contact:</strong><br>
             Department of Economics<br>
             Cornell University<br>
             Ithaca, NY</p>
-    </header>
-
-    <section>
+    </div>
+    <div class="section">
         <h2>Published Papers</h2>
-            <p style="margin:0"> <a style="margin:0; font-size:100%; font-weight:bold" href="https://www.sciencedirect.com/science/article/pii/S0272775722000620">The Decline in Time to Bachelor's Degree</a> <br> with <a href="#">Jeffrey T. Denning</a>, <a href="#">Eric R. Eide</a>, and <a href="#">Kevin J. Mumford</a> <br> <i>Economics of Education Review</i>, 2022, 90: 102287 <br><button class="accordion">
-                Abstract
-            </button>
-            <div class="panel" style="background-color: #F1F1F1; color: #666; padding: 10px;"><p>After increasing in the 1970s and 1980s, time to bachelor's degree has declined since the 1990s. We document this fact using data from three nationally representative surveys. We show that this pattern is occurring across school types and for all student types. Using administrative student records from 10 large universities, we confirm the finding and show that it is robust to alternative sample definitions. We discuss what might explain the decline in time to bachelor's degree by considering trends in student preparation, state funding, student enrollment, study time, and student employment during college.</p></div>
 
-            <p style="margin:0"><button class="accordion">
-                BibTeX citation
-            </button>
-            <div class="panel" style="background-color: #F1F1F1; color: #666; padding: 10px;"><p> <pre> <code>
-    @article{denning2022decline,
-      title={The Decline in Time to Bachelor's Degree},
-      author={Denning, Jeffrey T and Eide, Eric R and Mumford, Kevin J and Sabey, Daniel J},
-      journal={Economics of Education Review},
-      volume={90},
-      pages={102287},
-      year={2022},
-      publisher={Elsevier},
-      doi={10.1016/j.econedurev.2022.102287}
-    }
-    </code> </pre> </p></div>
+        <p class="paper-title"><a href="https://www.sciencedirect.com/science/article/pii/S0272775722000620">The Decline in Time to Bachelor's Degree</a></p>
+        <p class="paper-authors">with Jeffrey T. Denning, Eric R. Eide, and Kevin J. Mumford</p>
+        <p><em>Economics of Education Review</em>, 2022, 90: 102287</p>
+
+        <div class="panel">
+            After increasing in the 1970s and 1980s, time to bachelor's degree has declined since the 1990s. We document this fact using data from three nationally representative surveys. We show that this pattern is occurring across school types and for all student types. Using administrative student records from 10 large universities, we confirm the finding and show that it is robust to alternative sample definitions. We discuss what might explain the decline in time to bachelor's degree by considering trends in student preparation, state funding, student enrollment, study time, and student employment during college.
+        </div>
+
+        <p style="margin-top: 1rem">BibTeX citation</p>
+        <div class="citation-panel">@article{denning2022decline,
+            title={The Decline in Time to Bachelor's Degree},
+            author={Denning, Jeffrey T and Eide, Eric R and Mumford, Kevin J and Sabey, Daniel J},
+            journal={Economics of Education Review},
+            volume={90},
+            pages={102287},
+            year={2022},
+            publisher={Elsevier},
+            doi={10.1016/j.econedurev.2022.102287}
+            }</div>
 
         <hr>
 
         <h2>Working Papers</h2>
-        <!-- Working papers will go here -->
 
         <hr>
 
         <h2>Works in Progress</h2>
-        <!-- Works in progress will go here -->
-    </section>
+    </div>
 </div>
-
-<script>
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-
-    for (i = 0; i < acc.length; i++) {
-        acc[i].onclick = function(){
-            this.classList.toggle("active");
-            this.parentNode.nextElementSibling.classList.toggle("show");
-        }
-    }
-</script>
 </body>
 </html>
