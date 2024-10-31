@@ -5,50 +5,127 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Research | Daniel Sabey</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-
     <style>
+        /* Basic reset and body styles */
+        body {
+          padding: 50px;
+          font: 14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+          color: #333;
+          font-weight: 400;
+          margin: 0;
+        }
+
+        /* Wrapper for the entire content */
+        .wrapper {
+          width: 960px;
+          margin: 0 auto;
+          position: relative;
+        }
+
+        /* Header/sidebar styles */
+        header {
+          width: 270px;
+          position: fixed;
+          left: 50%;
+          margin-left: -480px;
+        }
+
+        /* Main content section */
+        section {
+          width: 600px;
+          float: right;
+          padding-bottom: 50px;
+        }
+
+        /* Accordion styles */
         button.accordion {
-        font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        cursor: pointer;
-        padding: 0px;
-        border: none;
-        text-align: left;
-        outline: none;
-        font-size: 100%;
-        transition: 0.3s;
-        background-color: #f8f8f8;
+          font: 14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+          cursor: pointer;
+          padding: 0px;
+          border: none;
+          text-align: left;
+          outline: none;
+          font-size: 100%;
+          transition: 0.3s;
+          background-color: #f8f8f8;
         }
+
         button.accordion.active, button.accordion:hover {
-        background-color: #f8f8f8;
+          background-color: #f8f8f8;
         }
+
         button.accordion:after {
-        content: " [+] ";
-        font-size: 90%;
-        color:#777;
-        float: left;
-        margin-left: 1px;
+          content: " [+] ";
+          font-size: 90%;
+          color: #777;
+          float: left;
+          margin-left: 1px;
         }
 
         button.accordion.active:after {
-        content: " [\2212] ";
+          content: " [\2212] ";
         }
+
         div.panel {
-        padding: 0 20px;
-        margin-top: 5px;
-        display: none;
-        background-color: white;
-        font-size: 100%;
+          padding: 0 20px;
+          margin-top: 5px;
+          display: none;
+          background-color: white;
+          font-size: 100%;
         }
+
         div.panel.show {
-        display: block !important;
+          display: block !important;
         }
+
+        /* Social row styles */
         .social-row {
           display: flex;
           flex-wrap: wrap;
-          justify-content: space-between;
+          gap: 10px;
+          margin: 20px 0;
+        }
+
+        /* Link styles */
+        a {
+          color: #267CB9;
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+
+        /* Header image */
+        .profile {
+          width: 200px;
+          margin-bottom: 20px;
+        }
+
+        /* Responsive design */
+        @media print, screen and (max-width: 960px) {
+          div.wrapper {
+            width: auto;
+            margin: 0;
+          }
+
+          header, section {
+            float: none;
+            position: static;
+            width: auto;
+          }
+
+          header {
+            padding-right: 320px;
+          }
+
+          section {
+            border: 1px solid #e5e5e5;
+            border-width: 1px 0;
+            padding: 20px 0;
+            margin: 0 0 20px;
+          }
         }
     </style>
 </head>
@@ -59,8 +136,8 @@
 
         <img src="my-photo.jpg" class="profile">
 
-        PhD Student<br>
-        Cornell University
+        <p>PhD Student<br>
+            Cornell University</p>
 
         <h3><a href="index.html">Home</a></h3>
         <h3><a href="research.html">Research</a></h3>
@@ -79,26 +156,21 @@
     </header>
 
     <section>
-
-        <h2><a id="published-papers-updated" class="anchor" href="#publications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Published Papers</h2>
-        <!-- Published papers will go here following this template for each:
-        <p style="margin:0"> <a style="margin:0; font-size:100%; font-weight:bold" href="#">Title</a> <br> with [coauthors] <br> <i>Journal Name</i>, Year, Vol (Issue): pages <br><button class="accordion">Abstract</button>
-        <div class="panel" style="background-color: #F1F1F1; color: #666; padding: 10px;"><p>Abstract text</p></div>
-        -->
+        <h2>Published Papers</h2>
+        <!-- Published papers will go here -->
 
         <hr>
 
-        <h2><a id="recent-papers-updated" class="anchor" href="#workingpapers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Working Papers</h2>
-        <!-- Working papers will go here following same template -->
+        <h2>Working Papers</h2>
+        <!-- Working papers will go here -->
 
         <hr>
 
-        <h2><a id="works-in-progress" class="anchor" href="#workinprogress" aria-hidden="true"><span class="octicon octicon-link"></span></a>Works in Progress</h2>
-        <!-- Works in progress will go here following same template -->
-
+        <h2>Works in Progress</h2>
+        <!-- Works in progress will go here -->
     </section>
 </div>
-<script src="javascripts/scale.fix.js"></script>
+
 <script>
     var acc = document.getElementsByClassName("accordion");
     var i;
@@ -107,7 +179,7 @@
         acc[i].onclick = function(){
             this.classList.toggle("active");
             this.parentNode.nextElementSibling.classList.toggle("show");
-      }
+        }
     }
 </script>
 </body>
