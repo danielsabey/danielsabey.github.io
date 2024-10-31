@@ -13,14 +13,14 @@
             margin: 0;
             padding: 0;
         }
-        
+
         .wrapper {
             display: flex;
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
-        
+
         header {
             width: 270px;
             padding: 20px;
@@ -29,25 +29,25 @@
             height: 100vh;
             overflow-y: auto;
         }
-        
+
         section {
             margin-left: 310px;
             padding: 20px;
             max-width: 800px;
         }
-        
+
         h1 {
             margin-bottom: 10px;
             color: #222;
         }
-        
+
         .social-row {
             display: flex;
             flex-direction: column;
             gap: 10px;
             margin: 20px 0;
         }
-        
+
         .social-row a {
             text-decoration: none;
             color: #267CB9;
@@ -55,11 +55,11 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .social-row a:hover {
             text-decoration: underline;
         }
-        
+
         nav a {
             display: block;
             color: #267CB9;
@@ -67,28 +67,28 @@
             padding: 5px 0;
             font-size: 1.1em;
         }
-        
+
         nav a:hover {
             text-decoration: underline;
         }
-        
+
         img.profile {
             max-width: 250px;
             border-radius: 5px;
             margin-bottom: 20px;
         }
-        
+
         @media screen and (max-width: 800px) {
             .wrapper {
                 flex-direction: column;
             }
-            
+
             header {
                 position: relative;
                 width: auto;
                 height: auto;
             }
-            
+
             section {
                 margin-left: 0;
             }
@@ -101,10 +101,9 @@
 <body>
 <div class="wrapper">
     <header>
+        <img src="my-photo.jpg" alt="Daniel Sabey" class="profile">
         <h1>Daniel Sabey</h1>
         <p>PhD Student<br>Cornell University</p>
-
-        <img src="my-photo.jpg" alt="Daniel Sabey" class="profile">
 
         <nav>
             <h3><a href="index.html">Home</a></h3>
@@ -127,7 +126,6 @@
             <a href="https://x.com/SabeyDaniel">
                 <i class="fab fa-twitter"></i> Twitter
             </a>
-
         </div>
 
         <p><b>Contact:</b><br>
@@ -137,6 +135,7 @@
     </header>
 
     <section>
+        <h2>About Me</h2>
         <p>Welcome! I am a PhD student in Economics at Cornell University. My research focuses on understanding and improving educational outcomes while considering their broader implications for labor markets and policy.</p>
 
         <p>Research Interests:</p>
