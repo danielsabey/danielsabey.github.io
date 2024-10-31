@@ -5,25 +5,38 @@
         body {
           margin: 0;
           padding: 0;
-          background-color: #ffffff;  /* White background */
+          background-color: #ffffff;
           color: #1a1a1a;
           font-family: system-ui, -apple-system, sans-serif;
+          display: flex;
+          justify-content: center;
+        }
+
+        .page-container {
+          width: 100%;
+          max-width: 1200px;
+          padding: 2rem;
         }
 
         .wrapper {
           display: grid;
           grid-template-columns: 300px 1fr;
           min-height: 100vh;
+          gap: 2rem;
         }
 
         .wrapper > div:first-child {
-          background-color: #e6f3ff;  /* Light blue */
+          background-color: #e6f3ff;
           color: #1a1a1a;
           padding: 2rem;
+          border-radius: 12px;
+          height: fit-content;
+          position: sticky;
+          top: 2rem;
         }
 
         .wrapper > div:first-child a {
-          color: #2c5282;  /* Darker blue for links */
+          color: #2c5282;
           text-decoration: none;
         }
 
@@ -32,16 +45,16 @@
         }
 
         .section {
-          padding: 2rem;
+          padding: 2rem 0;
           max-width: 800px;
           line-height: 1.6;
-          background-color: #ffffff;  /* White */
+          background-color: #ffffff;
         }
 
         .profile {
-          width: 200px;
-          height: 200px;
-          border-radius: 50%;
+          width: 100%;
+          height: auto;
+          border-radius: 12px;
           margin: 1rem 0;
         }
 
@@ -52,7 +65,7 @@
         }
 
         .panel {
-          background-color: #f8f8f8 !important;  /* Very light grey for panels */
+          background-color: #f8f8f8 !important;
           border-radius: 4px;
           box-shadow: 0 1px 3px rgba(0,0,0,0.1);
           margin: 1rem 0;
@@ -62,9 +75,16 @@
 
         h1, h2, h3 {
           color: #1a1a1a;
+          margin-top: 2rem;
         }
 
-        /* Hover effects for better interactivity */
+        /* Add horizontal line styling */
+        hr {
+          border: none;
+          border-top: 1px solid #e5e5e5;
+          margin: 2rem 0;
+        }
+
         .wrapper > div:first-child a:hover {
           color: #1a1a1a;
           transition: color 0.2s ease;
@@ -75,7 +95,6 @@
           transition: opacity 0.2s ease;
         }
 
-        /* Style for research interests list */
         .research-interests {
           margin: 1.5rem 0;
           padding-left: 1.2rem;
@@ -84,40 +103,78 @@
         .research-interests li {
           margin: 0.5rem 0;
         }
+
+        /* Research page specific styles */
+        .paper-title {
+          font-weight: bold;
+          margin: 0;
+          font-size: 1.1rem;
+        }
+
+        .paper-authors {
+          margin: 0.5rem 0;
+          color: #4a5568;
+        }
+
+        .citation-panel {
+          font-family: monospace;
+          white-space: pre-wrap;
+          font-size: 0.9rem;
+          background-color: #f8f8f8;
+          padding: 1rem;
+          border-radius: 4px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1000px) {
+          .page-container {
+            padding: 1rem;
+          }
+
+          .wrapper {
+            grid-template-columns: 1fr;
+          }
+
+          .wrapper > div:first-child {
+            position: static;
+          }
+        }
     </style>
 </head>
 <body>
-<div class="wrapper">
-    <div>
-        <h1>Daniel Sabey</h1>
-        <img src="my-photo.jpg" class="profile" alt="Daniel Sabey">
-        <p>PhD Student<br>Cornell University</p>
-        <h3><a href="index.html">Home</a></h3>
-        <h3><a href="research.html">Research</a></h3>
-        <h3><a href="CV.pdf">CV</a></h3>
-        <div class="social-row">
-            <a href="mailto:danielsabey@gmail.com">Email</a>
-            <a href="https://linkedin.com/in/daniel-sabey">LinkedIn</a>
-            <a href="https://x.com/SabeyDaniel">Twitter</a>
+<div class="page-container">
+    <div class="wrapper">
+        <div>
+            <h1>Daniel Sabey</h1>
+            <img src="my-photo.jpg" class="profile" alt="Daniel Sabey">
+            <p>PhD Student<br>Cornell University</p>
+            <h3><a href="index.html">Home</a></h3>
+            <h3><a href="research.html">Research</a></h3>
+            <h3><a href="CV.pdf">CV</a></h3>
+            <div class="social-row">
+                <a href="mailto:danielsabey@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/daniel-sabey">LinkedIn</a>
+                <a href="https://x.com/SabeyDaniel">Twitter</a>
+            </div>
+            <p><strong>Contact:</strong><br>
+                Department of Economics<br>
+                Cornell University<br>
+                Ithaca, NY</p>
         </div>
-        <p><strong>Contact:</strong><br>
-            Department of Economics<br>
-            Cornell University<br>
-            Ithaca, NY</p>
-    </div>
-    <div class="section">
-        <h2>About Me</h2>
+        <div class="section">
+            <h2>About Me</h2>
 
-        <p>Welcome! I am a PhD student in Economics at Cornell University. My research focuses on understanding and improving educational outcomes while considering their broader implications for labor markets and policy.</p>
+            <p>Welcome! I am a PhD student in Economics at Cornell University. My research focuses on understanding and improving educational outcomes while considering their broader implications for labor markets and policy.</p>
 
-        <p>Research Interests:</p>
-        <ul class="research-interests">
-            <li>Economics of Education</li>
-            <li>Labor Economics</li>
-            <li>Policy Analysis</li>
-        </ul>
+            <p>Research Interests:</p>
+            <ul class="research-interests">
+                <li>Economics of Education</li>
+                <li>Labor Economics</li>
+                <li>Policy Analysis</li>
+            </ul>
 
-        <p>I am particularly interested in studying how educational policies and interventions affect student outcomes and later life success. My research combines empirical analysis with policy-relevant questions to contribute to our understanding of education and labor markets.</p>
+            <p>I am particularly interested in studying how educational policies and interventions affect student outcomes and later life success. My research combines empirical analysis with policy-relevant questions to contribute to our understanding of education and labor markets.</p>
+        </div>
     </div>
 </div>
 </body>

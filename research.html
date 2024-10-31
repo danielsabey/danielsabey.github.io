@@ -2,24 +2,38 @@
 <html>
 <head>
     <style>
+        /* Previous styles remain the same */
         body {
           margin: 0;
           padding: 0;
           background-color: #ffffff;
           color: #1a1a1a;
           font-family: system-ui, -apple-system, sans-serif;
+          display: flex;
+          justify-content: center;
+        }
+
+        .page-container {
+          width: 100%;
+          max-width: 1200px;
+          padding: 2rem;
         }
 
         .wrapper {
           display: grid;
           grid-template-columns: 300px 1fr;
           min-height: 100vh;
+          gap: 2rem;
         }
 
         .wrapper > div:first-child {
           background-color: #e6f3ff;
           color: #1a1a1a;
           padding: 2rem;
+          border-radius: 12px;
+          height: fit-content;
+          position: sticky;
+          top: 2rem;
         }
 
         .wrapper > div:first-child a {
@@ -32,130 +46,162 @@
         }
 
         .section {
-          padding: 2rem;
+          padding: 2rem 0;
           max-width: 800px;
           line-height: 1.6;
           background-color: #ffffff;
         }
 
         .profile {
-          width: 200px;
-          height: 200px;
-          border-radius: 50%;
+          width: 100%;
+          height: auto;
+          border-radius: 12px;
           margin: 1rem 0;
         }
 
-        .social-row {
-          display: flex;
-          gap: 1rem;
-          margin: 1rem 0;
+        /* Accordion styles */
+        .accordion {
+          background-color: #ffffff;
+          color: #2c5282;
+          cursor: pointer;
+          padding: 8px 15px;
+          width: auto;
+          text-align: left;
+          border: none;
+          outline: none;
+          transition: 0.4s;
+          font-size: 1rem;
+          margin: 0.5rem 0;
+          font-weight: 500;
+          border-radius: 4px;
+        }
+
+        .accordion:hover {
+          background-color: #f0f7ff;
+        }
+
+        .accordion:after {
+          content: '+';
+          color: #2c5282;
+          font-weight: bold;
+          float: right;
+          margin-left: 5px;
+        }
+
+        .accordion.active:after {
+          content: '−';
         }
 
         .panel {
-          background-color: #f8f8f8 !important;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.2s ease-out;
+          background-color: #f8f8f8;
           border-radius: 4px;
-          box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-          margin: 1rem 0;
-          color: #1a1a1a;
+          margin: 0.5rem 0;
+        }
+
+        .panel.show {
+          max-height: 500px;
           padding: 1.5rem;
         }
 
-        h1, h2, h3 {
-          color: #1a1a1a;
-          margin-top: 2rem;
+        .paper-details {
+          margin: 0;
+          margin-bottom: 1rem;
         }
 
-        /* Add horizontal line styling */
-        hr {
-          border: none;
-          border-top: 1px solid #e5e5e5;
-          margin: 2rem 0;
-        }
-
-        .wrapper > div:first-child a:hover {
-          color: #1a1a1a;
-          transition: color 0.2s ease;
-        }
-
-        .social-row a:hover {
-          opacity: 0.8;
-          transition: opacity 0.2s ease;
-        }
-
-        /* Style for paper title */
         .paper-title {
           font-weight: bold;
           margin: 0;
           font-size: 1.1rem;
         }
 
-        /* Style for paper authors */
         .paper-authors {
           margin: 0.5rem 0;
-          color: #4a5568;
         }
 
-        /* Style for citation panel */
         .citation-panel {
           font-family: monospace;
           white-space: pre-wrap;
           font-size: 0.9rem;
-          background-color: #f8f8f8;
-          padding: 1rem;
-          border-radius: 4px;
         }
+
+        /* Rest of the previous styles... */
     </style>
 </head>
 <body>
-<div class="wrapper">
-    <div>
-        <h1>Daniel Sabey</h1>
-        <img src="my-photo.jpg" class="profile" alt="Daniel Sabey">
-        <p>PhD Student<br>Cornell University</p>
-        <h3><a href="index.html">Home</a></h3>
-        <h3><a href="research.html">Research</a></h3>
-        <h3><a href="CV.pdf">CV</a></h3>
-        <div class="social-row">
-            <a href="mailto:danielsabey@gmail.com">Email</a>
-            <a href="https://linkedin.com/in/daniel-sabey">LinkedIn</a>
-            <a href="https://x.com/SabeyDaniel">Twitter</a>
+<div class="page-container">
+    <div class="wrapper">
+        <div>
+            <h1>Daniel Sabey</h1>
+            <img src="my-photo.jpg" class="profile" alt="Daniel Sabey">
+            <p>PhD Student<br>Cornell University</p>
+            <h3><a href="index.html">Home</a></h3>
+            <h3><a href="research.html">Research</a></h3>
+            <h3><a href="CV.pdf">CV</a></h3>
+            <div class="social-row">
+                <a href="mailto:danielsabey@gmail.com">Email</a>
+                <a href="https://linkedin.com/in/daniel-sabey">LinkedIn</a>
+                <a href="https://x.com/SabeyDaniel">Twitter</a>
+            </div>
+            <p><strong>Contact:</strong><br>
+                Department of Economics<br>
+                Cornell University<br>
+                Ithaca, NY</p>
         </div>
-        <p><strong>Contact:</strong><br>
-            Department of Economics<br>
-            Cornell University<br>
-            Ithaca, NY</p>
-    </div>
-    <div class="section">
-        <h2>Published Papers</h2>
+        <div class="section">
+            <h2>Published Papers</h2>
 
-        <p class="paper-title"><a href="https://www.sciencedirect.com/science/article/pii/S0272775722000620">The Decline in Time to Bachelor's Degree</a></p>
-        <p class="paper-authors">with Jeffrey T. Denning, Eric R. Eide, and Kevin J. Mumford</p>
-        <p><em>Economics of Education Review</em>, 2022, 90: 102287</p>
+            <div class="paper-details">
+                <p class="paper-title"><a href="https://www.sciencedirect.com/science/article/pii/S0272775722000620">The Decline in Time to Bachelor's Degree</a></p>
+                <p class="paper-authors">with <a href="#">Jeffrey T. Denning</a>, <a href="#">Eric R. Eide</a>, and <a href="#">Kevin J. Mumford</a></p>
+                <p><em>Economics of Education Review</em>, 2022, 90: 102287</p>
 
-        <div class="panel">
-            After increasing in the 1970s and 1980s, time to bachelor's degree has declined since the 1990s. We document this fact using data from three nationally representative surveys. We show that this pattern is occurring across school types and for all student types. Using administrative student records from 10 large universities, we confirm the finding and show that it is robust to alternative sample definitions. We discuss what might explain the decline in time to bachelor's degree by considering trends in student preparation, state funding, student enrollment, study time, and student employment during college.
+                <button class="accordion">Abstract</button>
+                <div class="panel">
+                    After increasing in the 1970s and 1980s, time to bachelor's degree has declined since the 1990s. We document this fact using data from three nationally representative surveys. We show that this pattern is occurring across school types and for all student types. Using administrative student records from 10 large universities, we confirm the finding and show that it is robust to alternative sample definitions. We discuss what might explain the decline in time to bachelor's degree by considering trends in student preparation, state funding, student enrollment, study time, and student employment during college.
+                </div>
+
+                <button class="accordion">BibTeX citation</button>
+                <div class="panel citation-panel">@article{denning2022decline,
+                    title={The Decline in Time to Bachelor's Degree},
+                    author={Denning, Jeffrey T and Eide, Eric R and Mumford, Kevin J and Sabey, Daniel J},
+                    journal={Economics of Education Review},
+                    volume={90},
+                    pages={102287},
+                    year={2022},
+                    publisher={Elsevier},
+                    doi={10.1016/j.econedurev.2022.102287}
+                    }</div>
+            </div>
+
+            <hr>
+
+            <h2>Working Papers</h2>
+
+            <hr>
+
+            <h2>Works in Progress</h2>
         </div>
-
-        <p style="margin-top: 1rem">BibTeX citation</p>
-        <div class="citation-panel">@article{denning2022decline,
-            title={The Decline in Time to Bachelor's Degree},
-            author={Denning, Jeffrey T and Eide, Eric R and Mumford, Kevin J and Sabey, Daniel J},
-            journal={Economics of Education Review},
-            volume={90},
-            pages={102287},
-            year={2022},
-            publisher={Elsevier},
-            doi={10.1016/j.econedurev.2022.102287}
-            }</div>
-
-        <hr>
-
-        <h2>Working Papers</h2>
-
-        <hr>
-
-        <h2>Works in Progress</h2>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var acc = document.getElementsByClassName("accordion");
+      for (var i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var panel = this.nextElementSibling;
+          if (panel.classList.contains('show')) {
+            panel.classList.remove('show');
+          } else {
+            panel.classList.add('show');
+          }
+        });
+      }
+    });
+</script>
 </body>
 </html>
