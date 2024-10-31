@@ -1,146 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-    <title>Daniel Sabey - Economics PhD Student</title>
-
     <style>
         body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            line-height: 1.5;
-            color: #333;
-            margin: 0;
-            padding: 0;
+          margin: 0;
+          padding: 0;
+          background-color: #ffffff;  /* White background */
+          color: #1a1a1a;
+          font-family: system-ui, -apple-system, sans-serif;
         }
 
         .wrapper {
-            display: flex;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+          display: grid;
+          grid-template-columns: 300px 1fr;
+          min-height: 100vh;
         }
 
-        header {
-            width: 270px;
-            padding: 20px;
-            position: fixed;
-            background: #f8f8f8;
-            height: 100vh;
-            overflow-y: auto;
+        .wrapper > div:first-child {
+          background-color: #e6f3ff;  /* Light blue */
+          color: #1a1a1a;
+          padding: 2rem;
         }
 
-        section {
-            margin-left: 310px;
-            padding: 20px;
-            max-width: 800px;
+        .wrapper > div:first-child a {
+          color: #2c5282;  /* Darker blue for links */
+          text-decoration: none;
         }
 
-        h1 {
-            margin-bottom: 10px;
-            color: #222;
+        .wrapper a {
+          color: #2c5282;
+        }
+
+        .section {
+          padding: 2rem;
+          max-width: 800px;
+          line-height: 1.6;
+          background-color: #ffffff;  /* White */
+        }
+
+        .profile {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          margin: 1rem 0;
         }
 
         .social-row {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin: 20px 0;
+          display: flex;
+          gap: 1rem;
+          margin: 1rem 0;
         }
 
-        .social-row a {
-            text-decoration: none;
-            color: #267CB9;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        .panel {
+          background-color: #f8f8f8 !important;  /* Very light grey for panels */
+          border-radius: 4px;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+          margin: 1rem 0;
+          color: #1a1a1a;
+          padding: 1.5rem;
+        }
+
+        h1, h2, h3 {
+          color: #1a1a1a;
+        }
+
+        /* Hover effects for better interactivity */
+        .wrapper > div:first-child a:hover {
+          color: #1a1a1a;
+          transition: color 0.2s ease;
         }
 
         .social-row a:hover {
-            text-decoration: underline;
+          opacity: 0.8;
+          transition: opacity 0.2s ease;
         }
 
-        nav a {
-            display: block;
-            color: #267CB9;
-            text-decoration: none;
-            padding: 5px 0;
-            font-size: 1.1em;
+        /* Style for research interests list */
+        .research-interests {
+          margin: 1.5rem 0;
+          padding-left: 1.2rem;
         }
 
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        img.profile {
-            max-width: 250px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        @media screen and (max-width: 800px) {
-            .wrapper {
-                flex-direction: column;
-            }
-
-            header {
-                position: relative;
-                width: auto;
-                height: auto;
-            }
-
-            section {
-                margin-left: 0;
-            }
+        .research-interests li {
+          margin: 0.5rem 0;
         }
     </style>
-
-    <!-- Font Awesome for icons -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
 <body>
 <div class="wrapper">
-    <header>
+    <div>
         <h1>Daniel Sabey</h1>
-        <img src="my-photo.jpg" alt="Daniel Sabey" class="profile">
+        <img src="my-photo.jpg" class="profile" alt="Daniel Sabey">
         <p>PhD Student<br>Cornell University</p>
-
-        <nav>
-            <h3><a href="index.html">Home</a></h3>
-            <h3><a href="research.html">Research</a></h3>
-            <h3><a href="CV.pdf">CV</a></h3>
-        </nav>
-
+        <h3><a href="index.html">Home</a></h3>
+        <h3><a href="research.html">Research</a></h3>
+        <h3><a href="CV.pdf">CV</a></h3>
         <div class="social-row">
-            <a href="mailto:danielsabey@gmail.com">
-                <i class="fas fa-envelope"></i> Email
-            <a href="https://linkedin.com/in/daniel-sabey">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://x.com/SabeyDaniel">
-                <i class="fab fa-twitter"></i> Twitter
-            </a>
+            <a href="mailto:danielsabey@gmail.com">Email</a>
+            <a href="https://linkedin.com/in/daniel-sabey">LinkedIn</a>
+            <a href="https://x.com/SabeyDaniel">Twitter</a>
         </div>
-
-        <p><b>Contact:</b><br>
+        <p><strong>Contact:</strong><br>
             Department of Economics<br>
             Cornell University<br>
             Ithaca, NY</p>
-    </header>
-
-    <section>
+    </div>
+    <div class="section">
         <h2>About Me</h2>
+
         <p>Welcome! I am a PhD student in Economics at Cornell University. My research focuses on understanding and improving educational outcomes while considering their broader implications for labor markets and policy.</p>
 
         <p>Research Interests:</p>
-        <ul>
+        <ul class="research-interests">
             <li>Economics of Education</li>
             <li>Labor Economics</li>
             <li>Policy Analysis</li>
         </ul>
 
         <p>I am particularly interested in studying how educational policies and interventions affect student outcomes and later life success. My research combines empirical analysis with policy-relevant questions to contribute to our understanding of education and labor markets.</p>
-    </section>
+    </div>
 </div>
 </body>
 </html>
