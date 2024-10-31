@@ -45,22 +45,39 @@
         div.panel.show {
         display: block !important;
         }
+        .social-row {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+        }
     </style>
 </head>
 <body>
 <div class="wrapper">
     <header>
         <h1>Daniel Sabey</h1>
-        <p>PhD Student<br>Cornell University</p>
+
+        <img src="my-photo.jpg" class="profile">
+
+        PhD Student<br>
+        Cornell University
+
         <h3><a href="index.html">Home</a></h3>
         <h3><a href="research.html">Research</a></h3>
         <h3><a href="cv.pdf">CV</a></h3>
 
-        <b>Contact:</b><br>
-        Department of Economics<br>
-        Cornell University<br>
-        Ithaca, NY
+        <div class="social-row">
+            <a href="mailto:danielsabey@gmail.com">Email</a>
+            <a href="https://linkedin.com/in/daniel-sabey">LinkedIn</a>
+            <a href="https://x.com/SabeyDaniel">Twitter</a>
+        </div>
+
+        <p><b>Contact:</b><br>
+            Department of Economics<br>
+            Cornell University<br>
+            Ithaca, NY</p>
     </header>
+
     <section>
 
         <h2><a id="published-papers-updated" class="anchor" href="#publications" aria-hidden="true"><span class="octicon octicon-link"></span></a>Published Papers</h2>
