@@ -2,7 +2,6 @@
 <html>
 <head>
     <style>
-        /* Previous styles remain the same */
         body {
           margin: 0;
           padding: 0;
@@ -35,6 +34,16 @@
           height: fit-content;
           position: sticky;
           top: 2rem;
+          text-align: center;  /* Added this line to center all text */
+        }
+
+        .wrapper > div:first-child p {
+          text-align: center;  /* Ensure paragraphs are centered */
+        }
+
+        .wrapper > div:first-child h1,
+        .wrapper > div:first-child h3 {
+          text-align: center;  /* Center headings in left panel */
         }
 
         .wrapper > div:first-child a {
@@ -58,6 +67,13 @@
           height: auto;
           border-radius: 12px;
           margin: 1rem 0;
+        }
+
+        .social-row {
+          display: flex;
+          gap: 1rem;
+          margin: 1rem 0;
+          justify-content: center;  /* Center the social links */
         }
 
         /* Accordion styles */
@@ -128,16 +144,28 @@
           font-size: 0.9rem;
         }
 
-        /* Rest of the previous styles... */
-    </style>
+        @media (max-width: 1000px) {
+          .page-container {
+            padding: 1rem;
+          }
+
+          .wrapper {
+            grid-template-columns: 1fr;
+          }
+
+          .wrapper > div:first-child {
+            position: static;
+          }
+        }
     </style>
 </head>
 <body>
 <div class="page-container">
     <div class="wrapper">
         <div>
-            <h1>Daniel Sabey</h1>
+
             <img src="my-photo.jpg" class="profile" alt="Daniel Sabey">
+            <h1>Daniel Sabey</h1>
             <p>PhD Student<br>Cornell University</p>
             <h3><a href="index.html">Home</a></h3>
             <h3><a href="research.html">Research</a></h3>

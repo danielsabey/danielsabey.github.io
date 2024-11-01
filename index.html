@@ -34,7 +34,11 @@
           height: fit-content;
           position: sticky;
           top: 2rem;
-          justify-content: center;
+          text-align: center;  /* Added this line to center all text */
+        }
+
+        .wrapper > div:first-child p {
+          text-align: center;  /* Ensure paragraphs are centered */
         }
 
         .wrapper > div:first-child a {
@@ -64,6 +68,7 @@
           display: flex;
           gap: 1rem;
           margin: 1rem 0;
+          justify-content: center;  /* Center the social links */
         }
 
         .panel {
@@ -78,9 +83,9 @@
         h1, h2, h3 {
           color: #1a1a1a;
           margin-top: 2rem;
+          text-align: center;  /* Ensure headers are centered */
         }
 
-        /* Add horizontal line styling */
         hr {
           border: none;
           border-top: 1px solid #e5e5e5;
@@ -106,7 +111,6 @@
           margin: 0.5rem 0;
         }
 
-        /* Research page specific styles */
         .paper-title {
           font-weight: bold;
           margin: 0;
@@ -127,7 +131,6 @@
           border-radius: 4px;
         }
 
-        /* Responsive adjustments */
         @media (max-width: 1000px) {
           .page-container {
             padding: 1rem;
@@ -147,8 +150,9 @@
 <div class="page-container">
     <div class="wrapper">
         <div>
-            <h1>Daniel Sabey</h1>
+
             <img src="my-photo.jpg" class="profile" alt="Daniel Sabey">
+            <h1>Daniel Sabey</h1>
             <p>PhD Student<br>Cornell University</p>
             <h3><a href="index.html">Home</a></h3>
             <h3><a href="research.html">Research</a></h3>
