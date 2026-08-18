@@ -2,18 +2,46 @@
 %   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[11pt]{resume}
+\documentclass[11pt]{article}
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry}
 \usepackage{ebgaramond}
+\usepackage{enumitem}
+\usepackage{array}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\newcommand{\name}[1]{\begin{center}\Huge\textbf{#1}\end{center}\vspace{-0.5em}}
+\newcommand{\address}[1]{\begin{center}#1\end{center}\vspace{-1em}}
+
+\newenvironment{rSection}[1]{
+  \vspace{1.5em}
+  \noindent\textbf{\MakeUppercase{#1}}
+  \vspace{0.2em}\hrule\vspace{0.5em}
+}{}
+
+\newenvironment{rSubsection}[4]{
+  \noindent\textbf{#1} \hfill #2 \\
+  \textit{#3} \hfill \textit{#4}
+  \begin{itemize}[leftmargin=1.5em, itemsep=-0.2em, topsep=0pt, parsep=0pt]
+}{
+  \end{itemize}
+  \vspace{0.5em}
+}
+
+\renewenvironment{quote}{%
+  \list{}{\rightmargin=0pt \leftmargin=1.5em}%
+  \item\relax
+}
+{\endlist}
+
+\begin{document}
 
 %------------------------------------------------
 \name{Daniel Sabey}
 
 \address{18a Lisa Ln \\ Ithaca, New York}
 \address{(303) 356-1453 \\ danielsabey@gmail.com}
-
-%----------------------------------------------------------------------------------------
-
-\begin{document}
 
 %----------------------------------------------------------------------------------------
 %   EDUCATION SECTION
@@ -54,11 +82,7 @@
     
     ``Association Between Recent Medicaid Expansions and Child Maltreatment Reporting and Outcomes'' With Alex Hoagland.
     \begin{quote}
-        \small{\textbf{Question.} What was the association of recent Medicaid expansion in Maine on the volume and quality of child maltreatment reporting, and how did associations differ across children's characteristics?
-        
-        \textbf{Findings.} In this cohort study of 25,307,932 maltreatment reports across 38 states, Medicaid expansion in Maine led to increased overall reporting, particularly from medical professionals, resulting in increased separations at lower substantiation rates. Associations were stronger among Black and female children.
-        
-        \textbf{Meaning.} Our results suggest recent Medicaid expansions are associated with increased maltreatment reporting and intervention at lower specificity, resulting in a greater rate of unsubstantiated separations of children from their caregivers.}
+        \small{We investigate the association of recent Medicaid expansion in Maine on the volume and quality of child maltreatment reporting. We find that Medicaid expansion led to increased overall reporting, particularly from medical professionals, resulting in increased separations at lower substantiation rates. Associations were stronger among Black and female children. Our results suggest recent Medicaid expansions are associated with increased maltreatment reporting and intervention at lower specificity, resulting in a greater rate of unsubstantiated separations of children from their caregivers.}
     \end{quote}
 
     ``Locked Down and Lighting Up: Using COVID-19 Mobility Restrictions as an Instrument for Cigarette Stock and Smoking Intensity" With Don Kenkel and Alan Mathios.
