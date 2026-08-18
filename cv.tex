@@ -35,6 +35,12 @@
 }
 {\endlist}
 
+\newenvironment{eduDetails}{%
+  \begin{itemize}[label={}, leftmargin=1.5em, itemsep=0.2em, parsep=0pt, topsep=0.2em]
+}{%
+  \end{itemize}
+}
+
 \begin{document}
 
 %------------------------------------------------
@@ -48,19 +54,21 @@
 %----------------------------------------------------------------------------------------
 
 \begin{rSection}{Education}
-    \textbf{PhD Candidate of Economics Cornell University} \hfill \textit{August 2021 - Present}\\
-    Chair: Mike Lovenheim\\
-    Committee Members: Sule Alan and Evan Riehl
-    \vspace{0.5em}
+    \textbf{PhD Candidate of Economics Cornell University} \hfill \textit{August 2021 - Present}
+    \begin{eduDetails}
+        \item Chair: Mike Lovenheim
+        \item Committee Members: Sule Alan and Evan Riehl
+    \end{eduDetails}
 
     \textbf{MA Economics Cornell University} \hfill \textit{August 2023}
     \vspace{0.5em}
     
     \textbf{BS Economics Brigham Young University (3.97 GPA)} \hfill \textit{April 2020}
-    \\
-    Minors in Math, Business, and Korean (4.0 GPA)\\
-    Brigham Young University Academic Full Tuition Scholarship for 4 Years\\
-    Magna Cum Laude
+    \begin{eduDetails}
+        \item Minors in Math, Business, and Korean (4.0 GPA)
+        \item Brigham Young University Academic Full Tuition Scholarship for 4 Years
+        \item Magna Cum Laude
+    \end{eduDetails}
 \end{rSection}
 
 %----------------------------------------------------------------------------------------
